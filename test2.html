@@ -1,0 +1,101 @@
+<html>
+<style>
+.news {
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+  width: 700px;
+  height: 50px;
+  margin-left:50%;
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 3px;
+  -webkit-user-select: none
+} 
+
+.news span {
+  float: left;
+  color: #fff;
+  padding: 6px;
+  position: relative;
+  top: 1%;
+  border-radius: 4px;
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4);
+  font: 16px 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  cursor: pointer
+}
+
+.news ul {
+  float: left;
+  padding-left: 20px;
+  animation: ticker 10s cubic-bezier(1, 0, .5, 0) infinite;
+  -webkit-user-select: none
+}
+
+.news ul li {line-height: 30px; list-style: none }
+
+.news ul li a {
+  color: #fff;
+  text-decoration: none;
+  font: 14px Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none
+}
+
+.news ul:hover { animation-play-state: paused }
+.news span:hover+ul { animation-play-state: paused }
+
+/* OTHER COLORS */
+.blue { background: #347fd0 }
+.blue span { background: #2c66be }
+.red { background: #d23435 }
+.red span { background: #c22b2c }
+.green { background: #699B67 }
+.green span { background: #547d52 }
+.magenta { background: #b63ace }
+.magenta span { background: #842696 }
+</style>
+<body>
+<div class="news red">
+	<span>Latest News</span>
+	<ul>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</a></li>
+		<li><a href="#">Rolex Cosmograph Daytona launched at Baselworld 2017</a></li>
+		<li><a href="#">Rolex celebrates the 50th anniversary of its iconic Oyster Perpetual Sea-Dweller</a></li>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</a></li>
+	</ul>
+</div>
+
+<div class="news blue">
+	<span>Latest News</span>
+	<ul>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</li>
+		<li><a href="#">Rolex Cosmograph Daytona launched at Baselworld 2017</a></li>
+		<li><a href="#">Rolex celebrates the 50th anniversary of its iconic Oyster Perpetual Sea-Dweller</a></li>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</a></li>
+	</ul>
+</div>
+
+<div class="news green">
+	<span>Latest News</span>
+	<ul>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</li>
+		<li><a href="#">Rolex Cosmograph Daytona launched at Baselworld 2017</a></li>
+		<li><a href="#">Rolex celebrates the 50th anniversary of its iconic Oyster Perpetual Sea-Dweller</a></li>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</a></li>
+	</ul>
+</div>
+
+<div class="news magenta">
+	<span>Latest News</span>
+	<ul>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</li>
+		<li><a href="#">Rolex Cosmograph Daytona launched at Baselworld 2017</a></li>
+		<li><a href="#">Rolex celebrates the 50th anniversary of its iconic Oyster Perpetual Sea-Dweller</a></li>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</a></li>
+	</ul>
+</div>
+</div>
+</div>
+</body>
+</html>

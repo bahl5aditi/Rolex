@@ -1,0 +1,709 @@
+<html>
+<head>
+<style>
+.image{
+ background-position: center;
+ background-repeat:no-repeat;
+ margin-left:35%;
+ }
+ @-webkit-keyframes blinker {
+
+  from {opacity: 1.0;}
+
+  to {opacity: 0.0;}
+
+}
+ .blink{
+
+	text-decoration: blink;
+
+	-webkit-animation-name: blinker;
+
+	-webkit-animation-duration: 0.6s;
+
+	-webkit-animation-iteration-count:infinite;
+
+	-webkit-animation-timing-function:ease-in-out;
+
+	-webkit-animation-direction: alternate;
+
+}
+h2{
+color:green;
+margin-left:28%;
+font-style:italic;
+}
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* Mini reset, no margins, paddings or bullets */
+.menu,
+.submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Main level */
+.menu {			
+  margin: 50px auto;
+  width: 800px;
+  /* http://www.red-team-design.com/horizontal-centering-using-css-fit-content-value */
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;	
+}
+
+.menu > li {
+  background: green;
+  float: left;
+  position: relative;
+  transform: skewX(25deg);
+}
+
+.menu a {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Arial, Helvetica;
+  font-size: 14px;
+}		
+
+.menu li:hover {
+  background: #e74c3c;
+}		
+
+.menu > li > a {
+  transform: skewX(-25deg);
+  padding: 1em 2em;
+}
+
+/* Dropdown */
+.submenu {
+  position: absolute;
+  width: 200px;
+  left: 50%; margin-left: -100px;
+  transform: skewX(-25deg);
+  transform-origin: left top;
+}
+
+.submenu li {
+  background-color: #32cd32;
+  position: relative;
+  overflow: hidden;		
+}						
+
+.submenu > li > a {
+  padding: 1em 2em;			
+}
+
+.submenu > li::after {
+  content: '';
+  position: absolute;
+  top: -125%;
+  height: 100%;
+  width: 100%;			
+  box-shadow: 0 0 50px rgba(0, 0, 0, .9);			
+}		
+
+/* Odd stuff */
+.submenu > li:nth-child(odd){
+  transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(odd) > a {
+  transform: skewX(25deg);
+}
+
+.submenu > li:nth-child(odd)::after {
+  right: -50%;
+  transform: skewX(-25deg) rotate(3deg);
+}				
+
+/* Even stuff */
+.submenu > li:nth-child(even){
+  transform: skewX(25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a {
+  transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after {
+  left: -50%;
+  transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.submenu,
+.submenu li {
+  opacity: 0;
+  visibility: hidden;			
+}
+
+.submenu li {
+  transition: .2s ease transform;
+}
+
+.menu > li:hover .submenu,
+.menu > li:hover .submenu li {
+  opacity: 1;
+  visibility: visible;
+}		
+
+.menu > li:hover .submenu li:nth-child(even){
+  transform: skewX(25deg) translateX(15px);			
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+  transform: skewX(-25deg) translateX(-15px);			
+}
+@keyframes slider {
+0% {
+	left: 0;
+}
+20% {
+
+	left: 0;
+}
+25% {
+
+	left: -100%;
+	}
+
+45%{
+
+    left: -100%;
+}
+
+50% {
+
+		left: -200%;
+}
+
+70% {
+
+	left: -200%;
+}
+75% {
+
+	left: -300%;
+}
+95% {
+
+	left: -300%;
+}
+100% {
+
+	left: -400%;
+}
+}
+#slider {
+    margin-top:3%;
+	overflow: hidden;
+}
+#slider figure img {
+	width: 20%;
+	float: left;
+}
+#slider figure {
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	text-align: left;
+	font-size: 0;
+	animation: 20s slider infinite;
+    transition-delay:-2s;	
+}
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@keyframes ticker {
+	0%   {margin-top: 0}
+	25%  {margin-top: -30px}
+	50%  {margin-top: -60px}
+	75%  {margin-top: -90px}
+	100% {margin-top: 0}
+}
+
+
+.news {
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+  width: 700px;
+  height: 50px;
+  margin-left:50%;
+ 
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 3px;
+  -webkit-user-select: none
+} 
+
+.news span {
+  float: left;
+  color: #fff;
+  padding: 6px;
+  position: relative;
+  top: 1%;
+  border-radius: 4px;
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4);
+  font: 16px 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  cursor: pointer
+}
+
+.news ul {
+  float: left;
+  padding-left: 20px;
+  animation: ticker 10s cubic-bezier(1, 0, .5, 0) infinite;
+  -webkit-user-select: none
+}
+
+.news ul li {line-height: 30px; list-style: none }
+
+.news ul li a {
+  color: #fff;
+  text-decoration: none;
+  font: 14px Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none
+}
+
+.news ul:hover { animation-play-state: paused }
+.news span:hover+ul { animation-play-state: paused }
+
+/* OTHER COLORS */
+.blue { background: #347fd0 }
+.blue span { background: #2c66be }
+.red { background: #d23435 }
+.red span { background: #c22b2c }
+.green { background: #699B67 }
+.green span { background: #547d52 }
+.magenta { background: #b63ace }
+.magenta span { background: #842696 }
+img.frame {
+  border:solid 2px;
+  border-bottom-color:#ffe;
+  border-left-color:#eed;
+  border-right-color:#eed;
+  border-top-color:#ccb;
+  max-height:100%;
+  max-width:100%;
+}
+
+.frame {
+  background-color:#ddc;
+  border:solid 5vmin #eee;
+  border-bottom-color:#fff;
+  border-left-color:#eee;
+  border-radius:2px;
+  border-right-color:#eee;
+  border-top-color:#ddd;
+  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+  box-sizing:border-box;
+  display:inline-block;
+  margin-top:5%;
+  margin-left:50%;
+  height:50vh;
+  padding:8vmin;
+  position:relative;
+  text-align:center;
+  color:blue;
+  &:before {
+    border-radius:2px;
+    bottom:-2vmin;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
+    content:"";
+    left:-2vmin;
+    position:absolute;
+    right:-2vmin;
+    top:-2vmin;
+  }
+  &:after {
+    border-radius:2px;
+    bottom:-2.5vmin;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+    content:"";
+    left:5vmin;
+    position:absolute;
+    right:-2.5vmin;
+    top:-2.5vmin;
+  }
+}
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal normal 5 20px/normal "Aldrich", Helvetica, sans-serif;
+  color: rgb(32, 44, 45);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  text-shadow: 0 1px 0 rgb(128,141,147) , -1px 0 0 rgb(205,210,213) , -1px 2px 0 rgb(128,141,147) , -2px 1px 0 rgb(205,210,213) , -2px 3px 0 rgb(128,141,147) , -3px 2px 0 rgb(205,210,213) , -3px 4px 0 rgb(128,141,147) , -4px 3px 0 rgb(205,210,213) , -4px 5px 0 rgb(128,141,147) , -5px 4px 0 rgb(205,210,213) , -5px 6px 0 rgb(128,141,147) , -6px 5px 0 rgb(205,210,213) , -6px 7px 0 rgb(128,141,147) , -7px 6px 0 rgb(205,210,213) , -7px 8px 0 rgb(128,141,147) , -8px 7px 0 rgb(205,210,213) ;
+}
+.about{
+width:40%;
+margin-top:5%;
+}
+h1{
+width:40%;
+margin-top:-85%;
+}
+#myFooter {
+    background-color: #182c39;
+    color: white;
+    padding-top: 20px;
+}
+
+#map-container {
+    height: 240px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#myFooter .row {
+    margin: 0 85px;
+}
+
+#myFooter .footer-copyright {
+    background-color: #10222e;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
+
+#myFooter .container {
+    width: auto;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+#myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 38px;
+}
+
+#myFooter .fa {
+    font-size: 30px;
+    margin-right: 15px;
+    margin-left: 20px;
+    background-color: white;
+    color: #182c39;
+    border-radius: 51%;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 31px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#myFooter .fa-facebook:hover {
+    color: #2b55ff;
+}
+
+#myFooter .fa-facebook:focus {
+    color: #2b55ff;
+}
+
+#myFooter .fa-google-plus:hover {
+    color: red;
+}
+
+#myFooter .fa-google-plus:focus {
+    color: red;
+}
+
+#myFooter .fa-twitter:hover {
+    color: #00aced;
+}
+
+#myFooter .fa-twitter:focus {
+    color: #00aced;
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+    #myFooter .row {
+        margin: 0;
+    }
+}
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 200px;
+}
+
+#myFooter{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+}
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-with-map.css">
+</style>
+</head>
+<body>
+<div class="div1"><img src="rolex.png" class="image"></div>
+<h2><span class="blink">"A CROWN FOR EVERY ACHIEVEMENT"</</span>
+</H2>
+<ul class="menu cf">
+  <li><a href="">HISTORY</a>
+  <ul class="submenu">
+      <li><a href="history1.html">1905-1985</a></li>
+      <li><a href="history2.html">1986-2017</a></li></UL></li>
+  <li>
+    <a href="New folder\newdeals.html">NEW DEALS</a>
+    		
+  </li>
+  <li><a href="New folder (2)\newmodels.html">NEW MODELS</a></li>
+  <li><a href="celeb.html">BRAND AMBASSADORS</a></li>
+  <li><a href="images\globalpartners.html">GLOBAL PARTNERS</a></li>
+  <li><a href="space-agency\ourinvention.html">OUR INVENTIONS</a></li>
+  <li>
+    <a href="job\jo.html">JOB OPPORTUNITIES</a>
+    		
+  </li>
+  <li><a href="">CONTACT US</a>
+  <ul class="submenu">
+  <li><a href="FORM.html">WATCH REPAIRING FORM</a></li>
+      <li><a href="space-agency\contact.html">FEEDBACK FORM</a></li></UL></li>
+  </li>
+</ul><br><br><br>
+<div id="slider" >
+<figure>
+<img src="rolex11.png">
+<img src="rolex16.jpg">
+<img src="rolex15.jpg">
+</figure>	
+</div>
+<div class="news1">
+<div class="news red">
+	<span>Latest News</span>
+	<ul>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</a></li>
+		<li><a href="#">Rolex Cosmograph Daytona launched at Baselworld 2017</a></li>
+		<li><a href="#">Rolex celebrates the 50th anniversary of its iconic Oyster Perpetual Sea-Dweller</a></li>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</a></li>
+	</ul>
+</div>
+
+<div class="news blue">
+	<span>Latest News</span>
+	<ul>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</li>
+		<li><a href="#">Rolex Cosmograph Daytona launched at Baselworld 2017</a></li>
+		<li><a href="#">Rolex celebrates the 50th anniversary of its iconic Oyster Perpetual Sea-Dweller</a></li>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</a></li>
+	</ul>
+</div>
+
+<div class="news green">
+	<span>Latest News</span>
+	<ul>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</li>
+		<li><a href="#">Rolex Cosmograph Daytona launched at Baselworld 2017</a></li>
+		<li><a href="#">Rolex celebrates the 50th anniversary of its iconic Oyster Perpetual Sea-Dweller</a></li>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</a></li>
+	</ul>
+</div>
+
+<div class="news magenta">
+	<span>Latest News</span>
+	<ul>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</li>
+		<li><a href="#">Rolex Cosmograph Daytona launched at Baselworld 2017</a></li>
+		<li><a href="#">Rolex celebrates the 50th anniversary of its iconic Oyster Perpetual Sea-Dweller</a></li>
+		<li><a href="#">Rolex launched a new Sky Dweller model at Baselworld 2017</a></li>
+	</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="frame">
+  <img src="rolex3.jpg" alt="Mona Lisa" /><BR><A href="New folder (2)\newmodels.html">GMT MASTER SERIES</A>
+</div>
+<div class="frame" style="margin-left:70%;margin-top:-2%;">
+  <img src="rolex10.jpg" alt="Mona Lisa" /><BR><A href="New folder (2)\newmodels.html">GMT MASTER 2 SERIES</A>
+</div>
+<div class="frame" style="margin-left:50%;margin-top:-5%;">
+  <img src="rolex9.jpg" alt="Mona Lisa" /><BR><A href="New folder (2)\newmodels.html">OYSTER SERIES</A>
+</div>
+<DIV>
+
+</DIV>
+<div>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+</div>
+</div>
+<div class="enjoy-css">
+<div>
+<h1 style="font-family:monotype corsiva;font-style:italic;font-weight:bolder; color:#ff7700;"><span class="blink">WHY TO CHOOSE US</</span></h1>
+<div class="about" >
+
+
+<h3 width="40%" align="left"><span style="color:blue">We Use An Expensive And Difficult To Machine Steel Because It Looks Better</span></h3>
+<span style="color:#ff0000;">
+<p style="text-indent:50px; text-align:justify;">Many watch lovers are familiar with the fact that Rolex uses a type of steel that no one else uses. Stainless steel is not all the same. Steel comes in various types and grades... and most steel watches are made from a type of stainless steel called 316L. 
+Today, all the steel in Rolex watches is made from 904L steel, and as far as we know, pretty much no one else does.</p></br>
+</span>
+<h3 width="40%" align="left" color="#ff0000"><span style="color:blue">Rolex Has Its Own Science Lab</span></h3>
+<span>
+<p style="text-indent:50px;color:#ff0000; text-align:justify;">Given everything Rolex has done over the years it shouldn't come as a surprise that they have an internal Research & Development department. However, Rolex takes it well beyond that. Rolex has not one, but several different types of extremely well-equipped professional science labs at their various facilities. The purpose of these labs isn't just to research new watches and things that may go into watches, but also to research more effective and efficient manufacturing techniques. One way of looking at Rolex is that they are an extremely competent and almost obsessively organized manufacturing company - that just happens to make timepieces.</p></br>
+</span>
+
+<h3 width="40%" align="left"><span style="color:blue">An Army Of Gemologists Work At Rolex</span></h3>
+<span style="color:#ff0000;">
+<p style="text-indent:50px;text-align:justify;">It has been said that Rolex has preposterous standards for the materials it buys from its suppliers. This includes things like metals as well as precious stones such as diamonds, rubies, and emeralds. Rolex has a massive gemological department whose goal it is to buy, test, arrange, and set diamonds and other precious stones in a range of Rolex models. One of the things they do is check incoming stones to ensure that they are real. Using x-rays for example, they can test diamonds to ensure they aren't fake.</p></br>
+</span>
+<h3 width="40%" align="left"><span style="color:blue">Our Movements Are All Hand-Assembled And Tested</span></h3>
+<span style="color:#ff0000;">
+<p style="text-indent:50px;text-align:justify;">One of biggest misconceptions about Rolex is that machines build their watches. The rumor is so pervasive that even people at aBlogtoWatch believed it to be mostly true. This is because traditionally Rolex didn't communicate much on this topic. Well the truth is that Rolex watches are given all the hands-on human attention that you'd like to expect from a fine Swiss made watch.</p></br>
+</span>
+
+<h3 width="40%" align="left"><span style="color:blue">Technology Is A Watchmaker's Best Friend</span></h3>
+<span style="color:#ff0000;">
+<p style="text-indent:50px;text-align:justify;">The philosophy at Rolex seems to be very pragmatic, if a human does it better, then let a human do it, if a machine does it better, then let a machine do it. In fact the reason more watchmakers don't use machines is two-fold. First of all machines are huge investments and in many instances keeping people around to do it is less expensive. Second, they don't have the production demands that Rolex does. In fact, Rolex is fortunate to have the ability to equip its facilities with robotic help where needed.</p></br>
+</span>
+<h3 width="40%" align="left"><span style="color:blue">It Takes About A Year To Make One Rolex Watch</span></h3>
+<span style="color:#ff0000;">
+<p style="text-indent:50px;text-align:justify;">An advertisement for Rolex long ago claimed that it takes about a year to make a single Rolex watch. As suspicious as that sounds, it is true even today. Rolex produces almost a million watches a year, but surprisingly, no shortcuts are taken in the manufacturing process from what I could observe (and I've been to a lot of watch manufactures). Rolex is however interested in quality and efficiency. Basically, the entire company seems focused on producing the best watches, and continually seeing how they can make them better..</p></br>
+</span>
+</div>
+</DIV>
+</DIV>
+<video playsinline autoplay muted loop style="width:50%; margin-left:50%; margin-top:-40%;">
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+<source src="rolex.mp4" type="video/webm">
+<source src="rolex.mp4" type="video/mp4">
+</video>
+<div class="content">
+</div>
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Here we use the Google Embed API to show Google Maps. -->
+            <!-- In order for this to work in your project you will need to generate a unique API key.  -->
+            <iframe id="map-container" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJOwg_06VPwokRYv534QaPC8g&key=AIzaSyBdJm9Amm4KALkKlZObWn40dcpRyH119zg" >
+            </iframe>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2016 Copyright Text </p>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

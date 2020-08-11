@@ -1,0 +1,59 @@
+<html>
+<head>
+<style>
+.slider {
+    height: 15em;
+    width: 25em;
+}
+.slider li {
+    list-style: none;
+    position: absolute;
+}
+.slider img {
+    height: 15em;
+    width: 25em;
+    vertical-align: top;
+}
+</style>
+</head>
+<body>
+<ul class="slider">
+    <li>
+        <img src="rolex1.jpg/"Panel 1">
+    </li>
+    <li>
+        <img src="rolex2.jpg/"Panel 2">
+    </li>
+    <li>
+        <img src="rolex3.jpg/"Panel 3">
+    </li>
+    <li>
+        <img src="rolex4.jpg/"Panel 4">
+    </li>
+</ul>
+<ul class="slider">
+    <li>
+        <input type="radio" id="slide1" name="slide" checked>
+        <label for="slide1"></label>
+        <img src="http://joshnh.com/2012/08/14/making-a-pure-css-featured-image-slider/"Panel 1">
+    </li>
+    <li>
+        <input type="radio" id="slide2" name="slide">
+        <label for="slide2"></label>
+        <img src="http://joshnh.com/2012/08/14/making-a-pure-css-featured-image-slider/"Panel 2">
+    </li>
+    <li>
+        <input type="radio" id="slide3" name="slide">
+        <label for="slide3"></label>
+        <img src="http://joshnh.com/2012/08/14/making-a-pure-css-featured-image-slider/"Panel 3">
+    </li>
+    <li>
+        <input type="radio" id="slide4" name="slide">
+        <label for="slide4"></label>
+        <img src="http://joshnh.com/2012/08/14/making-a-pure-css-featured-image-slider/"Panel 4">
+    </li>
+</ul>
+
+
+</body>
+</html>

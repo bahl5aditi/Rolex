@@ -1,0 +1,65 @@
+/CSS DOCUMENT/
+.t{
+color:blue;
+text-align:center;
+font-style:italic;
+text-decoration:underline;
+font-size:24PT;
+margin-left:5cm;
+margin-right:2cm;
+}
+.b{
+color:yellow;
+text-align:center;
+font-style:italic;
+text-decoration:underline;
+FONT-SIZE:28PT;
+}
+.c{
+color:magenta;
+align:center;
+margin-bottom:2cm;
+font-size:18pt;
+font-wieght:bold;
+}
+.d{
+color:brown;
+text-align:center;
+text-decoration:underline;
+FONT-SIZE:18PT;
+align:center;
+}
+a:link{color:brown;}
+a:visited{color:brown;}
+a:hover{color:#87CEFA;}
+.e{
+color:cyan;
+align:center;
+margin-bottom:2cm;
+font-wieght:bold;
+}
+.flip_container{
+width: 200px;
+height: 200px;
+}
+.flip_container:hover .flip
+{
+-webkit-transform: rotateY(180deg);
+transform: rotateY(180deg);
+}
+.flip {
+-webkit-transition: 0.5s;
+transition: 0.5s;
+-webkit-transform-style: preserve-3d;
+transform-style: preserve-3d;
+position;relative;
+}
+.flip_back{
+position: absolute;
+top: 0;
+left: 0;
+}
+.flip_back{
+-webkit-transform: rotateY(180deg);
+transform: rotateY(180deg);
+}

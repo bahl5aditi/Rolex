@@ -1,0 +1,60 @@
+<html>
+<head>
+<style>
+h1{color:white;font-weight:bold;font-size:70px;font-family:courier;}
+img.mySlides {height:300px;margin:auto;width:1000px;border-radius:100px}
+img.tp {height:150px;margin-left:100px;border-radius:50%;width:200px;border-style:solid;border-color:white;}
+img.th{height:150px;width:200px;margin-left:100px;border-radius:50%;border-style:solid;border-color:white;}
+table{color:yellow;font-size:30pt;font-weight:bold;font-family:impact;}
+td.hh{text-align:center;}
+</style>
+<title>GLOBAL PARTNERS</title>
+</head>
+<body background="black_background_lines_scratches_69440_1920x1080.jpg">
+<h1><center>GLOBAL PARTNERS</center></h1>
+<img class="mySlides" src="Rolex-Logo-Wallpapers-7.png">
+<img class="mySlides" src="maxresdefault.jpg">
+<img class="mySlides" src="cq5dam.download.low.jpeg">
+<img class="mySlides" src="Roger-federer-Skydweller-1.jpg">
+<img class="mySlides" src="2fc0f0528e39a156fd1b02aba811ccdc.jpg">
+<img class="mySlides" src="elevenjames.jpg">
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+<table cellpadding='20'>
+<tr>
+<td><img class="tp" src="NG_logo.jpg"></td>
+<td class="hh" width="70%">Media:   National Geographic</td>
+</tr>
+<tr>
+<td><img class="th" src="Wimbledon2017_ShowImg.png.2017-06-09T12-52-55+12-00.jpg"></td>
+<td class="hh">Tennis:  Wimbledon</td>
+</tr>
+<tr>
+<td><img class="th" src="16_PCUP_Scenics_00595_CCp2.jpg"></td>
+<td class="hh">Golf:  President's Cup</td>
+</tr>
+<tr>
+<td><img class="th" src="20213-the-rolex-swan-cup-concludes-to-crown-two-victors.jpg"></td>
+<td class="hh">Yachting:  Swan Cup</td>
+</tr>
+<tr>
+<td><img class="th" src="Screen-Shot-2015-10-26-at-11.28.07.png"></td>
+<td class="hh">Hollywood:  James Bond</td>
+</tr>
+</table>
+</body>
+</html>
